@@ -18,6 +18,10 @@ class Posts extends Component
         $this->posts = $user->posts;
         return view('livewire.posts');
     }
+    public function index()
+    {
+        return view('livewire.posts_public');
+    }
 
     public function create()
     {
