@@ -43,7 +43,6 @@ class Posts extends Component
         $this->title = '';
         $this->body = '';
         $this->post_id = '';
-        $this->published = 0;
     }
 
     public function store()
@@ -56,7 +55,6 @@ class Posts extends Component
         Post::updateOrCreate(['id' => $this->post_id], [
             'title' => $this->title,
             'body' => $this->body,
-            'published' => $this->published,
         ]);
 
         session()->flash('message',
@@ -67,31 +65,12 @@ class Posts extends Component
     }
 
 
-
-    public function setName($name)
-    {
-        $published = $name;
-        //return $published;
-    }
-
-    public function publish($publishStatus)
-    {
-        if($publishStatus==0)
-        {
-            $published = "Unpublished";
-        }
-        else
-        {
-            $published = "Published";
-        }
-    }
     public function edit($id)
     {
         $post = Post::findOrFail($id);
         $this->post_id = $id;
         $this->title = $post->title;
         $this->body = $post->body;
-        $this->published = $post->published;
 
         $this->openModal();
     }

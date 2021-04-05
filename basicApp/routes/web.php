@@ -16,10 +16,14 @@ use App\Http\Livewire\Posts as LiveWirePosts;
 */
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/posts/',[\App\Http\Controllers\PostsController::class, 'index'])->name('posts_index_public');
 Route::get('/posts/{id}',[\App\Http\Controllers\PostsController::class, 'show'])->name('posts_show_public');
+
+Route::get('/pages/',[\App\Http\Controllers\PagesController::class, 'index'])->name('pages_index_public');
+Route::get('/pages/{id}',[\App\Http\Controllers\PagesController::class, 'show'])->name('pages_show_public');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $user = Auth::user();

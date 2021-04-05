@@ -24,7 +24,9 @@ class PageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence,
+            'body' => $this->faker->sentence,
+            'user_id' => User::factory(),
         ];
     }
 }
