@@ -33,7 +33,7 @@
                             <a href="{{route('pages_index_public')}}" class="text-sm text-gray-700 underline">Pages</a>
                             <a href="{{route('posts_index_public')}}" class="text-sm text-gray-700 underline">Posts</a>
                             <a href="{{('home')}}" class="text-sm text-gray-700 underline">Home</a>
-                            @foreach($pages_public as $page)
+                            @foreach($pages_all as $page)
                                 <a href="{{route('pages_show_public', $page->id)}}" class="hover:underline">{{$page->title}}</a>
                             @endforeach
                     </div>

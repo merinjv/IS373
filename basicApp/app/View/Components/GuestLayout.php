@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Page;
 use Illuminate\View\Component;
 use App\Models\Post;
 
@@ -14,7 +15,6 @@ class GuestLayout extends Component
      */
     public function render()
     {
-        $posts = Post::all();
-        return view('layouts.guest', compact($posts));
+        return view('layouts.guest');
     }
 }

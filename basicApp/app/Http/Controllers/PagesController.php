@@ -9,13 +9,13 @@ class PagesController extends Controller
 {
     public function show($id)
     {
-        return view('page', [
-            'page'=>Page::findorFail($id)
+        return view('page',[
+            'page'=>Page::findorfail($id)
         ]);
     }
     public function index()
     {
-        return view('pages', [
+        return view('pages',[
             'pages'=>Page::all()
         ]);
     }

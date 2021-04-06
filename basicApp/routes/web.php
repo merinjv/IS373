@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Posts;
 use App\Http\Livewire\Posts as LiveWirePosts;
+use App\Http\Livewire\Pages as LiveWirePages;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +32,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('pages_admin', LiveWirePages::class)->name('page');
 Route::middleware(['auth:sanctum', 'verified'])->get('posts_admin', LiveWirePosts::class)->name('post');
 //Route::get('page', Pages::class)->name('page');
