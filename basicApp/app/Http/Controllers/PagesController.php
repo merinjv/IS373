@@ -10,7 +10,7 @@ class PagesController extends Controller
     public function show($id)
     {
         return view('page',[
-            'page'=>Page::findorfail($id)
+            'page'=>Page::findorFail($id)
         ]);
     }
     public function index()
