@@ -26,7 +26,8 @@ class PostFactory extends Factory
         return [
             'title'=>$this->faker->title,
             'body'=>$this->faker->sentence,
-            'user_id'=>User::factory()
+            'user_id'=>User::factory(),
+            'publish_check'=>$this->faker->boolean
         ];
     }
 }

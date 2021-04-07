@@ -27,6 +27,7 @@ class PageFactory extends Factory
             'title' => $this->faker->sentence,
             'body' => $this->faker->sentence,
             'user_id' => User::factory(),
+            'publish_check'=>$this->faker->boolean
         ];
     }
 }
